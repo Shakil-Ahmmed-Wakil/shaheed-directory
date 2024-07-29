@@ -1,0 +1,16 @@
+body {
+    padding: 5%;
+  }
+  .martyr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 48px;
+    box-sizing: border-box;
+  }
+  .martyr-card {
+    background: #f7f7f7;
+    border: 1px dashed gray;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+  }

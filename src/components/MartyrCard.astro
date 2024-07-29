@@ -1,0 +1,14 @@
+---
+const { name, age, occupation, natureOfDeath, hospital, placeOfOccurrence, killingDate, killingTime } = Astro.props;
+---
+
+<div class="martyr-card">
+  <h2>{name || 'Unidentified'}</h2>
+  <p><strong>Age:</strong> {age || 'Unknown'}</p>
+  <p><strong>Occupation:</strong> {occupation || 'Unknown'}</p>
+  <p><strong>Nature of Death:</strong> {natureOfDeath || 'Unknown'}</p>
+  <p><strong>Hospital:</strong> {hospital || 'Unknown'}</p>
+  <p><strong>Place of Occurrence:</strong> {placeOfOccurrence || 'Unknown'}</p>
+  <p><strong>Killing Date:</strong> {new Date(killingDate).toLocaleDateString() || 'Unknown'}</p>
+  <p><strong>Killing Time:</strong> {killingTime || 'Unknown'}</p>
+</div>

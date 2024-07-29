@@ -1,0 +1,26 @@
+---
+import '../styles/style.css';
+import MartyrCard from '../components/MartyrCard.astro';
+
+const response = await fetch('https://script.google.com/macros/s/AKfycbzAU32-_tkfspwtpvVfVJg0J9nuJ_fOclIBubUGEMl8l0o18V3udivFFFUmYhOMKhfJ1g/exec');
+const data = await response.json();
+const martyrs = data.data.slice(1);
+---
+
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta name="viewport" content="width=device-width" />
+      <meta name="generator" content={Astro.generator} />
+    <title>Martyrs List</title>
+  </head>
+  <body>
+    <h1>Martyrs</h1>
+    <div class="martyr-grid">
+      {martyrs.map((martyr) => (
+        <MartyrCard {...martyr} />
+      ))}
+    </div>
+  </body>
+</html>
